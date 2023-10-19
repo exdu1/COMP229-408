@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<script src="http://localhost:8097"></script>
+<meta charset="utf-8" /> 
+<title>React Samples</title>
+</head> 
+<body>
+<!-- Target container --> 
+<div id="root"></div>
+<!-- React library & ReactDOM (Development Version)-->
+
+<script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script> 
+<script src="https://unpkg.com/react-dom@16.8.6/umd/react-
+dom.development.js"></script>
+<script>
+// Pure React and JavaScript code
+React.createElement( 
+"ul",
+null,
+React.createElement("li",  null,  "2 lb salmon"),
+React.createElement("li",  null,  "5 sprigs fresh rosemary"),
+React.createElement("li",  null,  "2 tablespoons olive oil"),
+React.createElement("li",  null,  "2 small lemons"),
+React.createElement("li",  null,  "1 teaspoon kosher salt"),
+React.createElement("li",  null,  "4 cloves of chopped garlic") 
+);
+const items = [ 
+"2 lb salmon",
+"5 sprigs fresh rosemary", 
+"2 tablespoons olive oil", 
+"2 small lemons",
+"1 teaspoon kosher salt", 
+"4 cloves of chopped garlic"
+];
+//React.createElement("ul",
+//{  className: "ingredients" },
+//items.map(ingredient => React.createElement("li", null, ingredient))
+//);
+
+React.createElement( 
+"ul",
+{  className: "ingredients" }, 
+items.map((ingredient,  i)  =>
+React.createElement("li",  {  key: i },  ingredient) 
+)
+);
+
+</script> 
+</body>
+</html>
