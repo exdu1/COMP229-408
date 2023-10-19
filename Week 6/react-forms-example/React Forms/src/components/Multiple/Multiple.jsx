@@ -20,8 +20,17 @@ export default function Multiple() {
         );
     };
 
+    const handleClear = () => {
+        setFormData({
+            name: " ",
+            email: " ",
+            message: " "
+        });
+    };
+
     return (
         <form onSubmit={handleSubmit} className="multiple">
+            <h1>New Shop</h1>
             <label className="multiple__text" htmlFor="name">Name:</label>
             <input type="text" id="name" className="multiple__input" name="name" value={formData.name} onChange={handleChange}/>
             
@@ -32,6 +41,7 @@ export default function Multiple() {
             <input type="message" className="multiple__textarea" name="message" value={formData.message} onChange={handleChange}/>
 
             <button className="multiple__button" type="submit">Submit</button>
+            <button className="clear__button" type="button" onClick={handleClear}>Cancel</button>
         </form>
     );
 }
