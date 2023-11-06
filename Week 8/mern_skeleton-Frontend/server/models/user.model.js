@@ -27,15 +27,17 @@ required: 'Password is required'
 },
  salt: String
 });
+
 UserSchema.virtual('password')
- .set(function(password) {
- this._password = password;
-//this.salt = this.makeSalt();
+  .set(function(password) {
+    this._password = password;
+    //this.salt = this.makeSalt();
 this.hashed_password = password;
 })
 .get(function() {
 return this._password;
  });
+
 UserSchema.path('hashed_password').validate(function(v) {
  if (this._password && this._password.length < 6) {
  this.invalidate('password', 'Password must be at least 6 characters.');
