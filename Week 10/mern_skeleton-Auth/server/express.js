@@ -40,6 +40,7 @@ res.status(200).send(Template())
 //app.use(express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
 //app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, '../dist/app')))
 // Serve app production bundle
+app.use(express.static(path.join(CURRENT_WORKING_DIR, "dist/app")));
 /*
 app.use(express.static(path.join(CURRENT_WORKING_DIR, "..", "dist/app")));
 app.use((req, res, next) => {
